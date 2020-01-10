@@ -1,9 +1,13 @@
 # [DB Init]
 
-## How to use this plugin
+## What is DB Init
 
 DB Init is a plugin that includes various snippets for wordpress development used in Don & Branco.
 To enable only specific snippets and add your custom ones, remove the comments from the initial dbinit.php file
+
+## How to use this plugin
+
+Just copy this project to your plugins folder in wordpress
 
 ## Custom post types
 
