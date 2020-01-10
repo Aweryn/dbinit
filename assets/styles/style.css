@@ -1,0 +1,24 @@
+#db-init {
+  background-color: white;
+  padding: 30px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+#db-init > h1 {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#db-init textarea {
+  border-radius: 0px;
+  padding: 15px;
+}
+
+#db-init input[type="text"] {
+  width: 100%;
+}
+
+#db-init form {
+  max-width: 760px;
+}
