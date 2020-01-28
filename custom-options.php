@@ -177,6 +177,18 @@
             </tbody>
           </table>
 
+          <h2 class="title">Login logo</h2>
+          <p><label for="db_custom_logo_url">Add URL of the logo eg. <i>/app/uploads/2020/01/logo.png</i></label></p>
+
+          <table class="form-table" role="presentation">
+            <tbody>
+              <tr>
+                <th scope="row"><label for="db_custom_logo_url">Logo URL</label></th>
+                <td><input name="db_custom_logo_url" type="text" id="db_custom_logo_url" value="<?= isset($_POST['db_custom_logo_url']) ? $_POST['db_custom_logo_url'] : get_option('db_custom_logo_url'); ?>" class="regular-text"></td>
+              </tr>
+            </tbody>
+          </table>
+
           <h2 class="title">Admin footer text</h2>
           <p><label for="db_footer_text">Change text shown in admin footer</label></p>
 
@@ -200,25 +212,10 @@
        * Tab 'Sage snippets'
        */
       if($active_tab == 'sage-snippets') { ?>
-      <div class="tab-content">
-        <form id="db-options" method="post" action="/wp/wp-admin/options-general.php?page=db-init-options" novalidate="novalidate">
-
-          <input type="hidden" name="action" value="update">
-          <input type="hidden" id="_wpnonce" name="_wpnonce" value="<?= wp_create_nonce('update-options'); ?>">
-          <input type="hidden" name="_wp_http_referer" value="/wp/wp-admin/options-general.php?page=db-init-options&updated=true">
-
-          <table class="form-table" role="presentation">
-            <tbody>
-              <tr>
-                <th scope="row"><label for="test">Site Title</label></th>
-                <td><input name="test" type="text" id="test" value="WP Starter" class="regular-text"></td>
-              </tr>
-            </tbody>
-          </table>
-
-          <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>
-
-          </form>
+        <div class="tab-content">
+          <div class="tab-content">
+            <p>Oh no, no snippets yet :(</p>
+          </div>
         </div>
       <?php } ?>
 

@@ -14,4 +14,10 @@ if(get_option('db_manage_admin_pages')) {
   DB\manage_admin_pages($email);
 }
 
+if(get_option('db_custom_logo_url')) {
+  $logo = get_option('db_custom_logo_url');
+  DB\db_custom_logo($logo);
+}
+
+// DB\custom_logo($url);
 // DB\disable_emojis();

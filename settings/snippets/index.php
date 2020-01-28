@@ -42,6 +42,22 @@ function manage_admin_pages($email) {
 }
 add_action( 'admin_init', __NAMESPACE__.'\\manage_admin_pages' );
 
+function db_custom_logo($logo) {
+  ?>
+  <style type="text/css">
+  body.login div#login h1 a {
+  background-image: url($logo);
+  height: 45px;
+  width: 210px;
+  background-size: contain;
+  }
+  </style>
+  <?php
+  }
+
+if(get_option('db_custom_logo_url')) {
+  add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\\db_custom_logo' );
+}
 /**
  * EDIT ADMIN FOOTER TEXT
  */
