@@ -9,7 +9,7 @@
         'DB Init',
         'manage_options',
         'db-init-options',
-        'db_init_options',
+        'db_init_options'
       );
   }
 
