@@ -17,7 +17,7 @@
 
       $opts = $a[0];
 
-      $namespace = 'dbinit';
+      $namespace = $opts['namespace'];
 
       $labels = array(
         'name'                  => _x( $a['name'], $namespace ),
@@ -61,13 +61,13 @@
         'public'                => true,
         'show_ui'               => true,
         'show_in_menu'          => true,
-        'menu_position'         => 1,
+        'menu_position'         => $opts['menu_position'] ? $opts['menu_position'] : 1,
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => true,
         'can_export'            => true,
         'has_archive'           => false,
         'exclude_from_search'   => false,
-        'publicly_queryable'    => true,
+        'publicly_queryable'    => $opts['publicly_queryable'] ? $opts['publicly_queryable'] : true,
         'query_var'             => strtolower($a['name']),
         // 'capabilities'          => $capabilities,
       );
