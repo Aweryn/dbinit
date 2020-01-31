@@ -2,17 +2,20 @@
   //
   namespace DB;
   
-  function register_cpt($name, $singular) {
+  function register_cpt($name, $singular, $opts) {
 
     $a = array(
       'name' => $name,
-      'singular' => $singular
+      'singular' => $singular,
+      $opts
     );
 
     $prefix = strtolower($name);
     $reg_function = 'register_cpt_'.$prefix;
 
     add_action('init', function() use ($a) {
+
+      $opts = $a[0];
 
       $namespace = 'dbinit';
 
@@ -53,7 +56,7 @@
         // 'rewrite'               => array( 'slug' => 'tapahtuma' ),
         // 'taxonomies'            => array('team'),
         'supports'              => array('thumbnail', 'title', 'comments'),
-        'menu_icon'             => 'dashicons-tickets-alt',
+        'menu_icon'             => $opts['icon'] ? $opts['icon'] : 'dashicons-text-page',
         'hierarchical'          => true,
         'public'                => true,
         'show_ui'               => true,
