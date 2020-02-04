@@ -43,7 +43,7 @@
         'remove_featured_image' => __( 'Poista kuva nosto', $namespace ),
         'use_featured_image'    => __( 'Käytä kuva nostona', $namespace ),
         'insert_into_item'      => __( 'Lisää', $namespace ),
-        'uploaded_to_this_item' => __( 'Lisätty tähän ryhmäon', $namespace ),
+        'uploaded_to_this_item' => __( 'Lisätty tähän ryhmään', $namespace ),
         'items_list'            => __( $a['name']. ' lista', $namespace ),
         'items_list_navigation' => __( $a['name']. ' lista navigaatio', $namespace ),
         'filter_items_list'     => __( $a['name']. ' lista filter', $namespace )
@@ -68,11 +68,11 @@
         'has_archive'           => false,
         'exclude_from_search'   => false,
         'publicly_queryable'    => isset($opts['publicly_queryable']) ? $opts['publicly_queryable'] : true,
-        'query_var'             => strtolower($a['name']),
+        'query_var'             => strtolower(remove_accents($a['name'])),
         // 'capabilities'          => $capabilities,
       );
   
-      register_post_type('cpt_'.(strtolower($a['name'])), $args);
+      register_post_type('cpt_'.(strtolower(remove_accents($a['name']))), $args);
 
     });
 }
