@@ -17,7 +17,7 @@
 
       $opts = $a[0];
 
-      $namespace = $opts['namespace'];
+      $namespace = isset($opts['namespace']) ? $opts['namespace'] : 'dbinit';
 
       $labels = array(
         'name'                  => _x( $a['name'], $namespace ),
