@@ -53,7 +53,7 @@
         'label'                 => __( $a['name'], $namespace ),
         'description'           => __( $a['name'] .'Info', $namespace ),
         'labels'                => $labels,
-        // 'rewrite'               => array( 'slug' => 'tapahtuma' ),
+        'rewrite'               => isset($opts['rewrite_slug']) ? array( 'slug' => $opts['rewrite_slug']) : '',
         // 'taxonomies'            => array('team'),
         'supports'              => array('thumbnail', 'title', 'comments'),
         'menu_icon'             => isset($opts['icon']) ? $opts['icon'] : 'dashicons-text-page',
